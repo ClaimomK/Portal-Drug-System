@@ -36,16 +36,19 @@
         <i class="layui-icon layui-icon-add-1"></i>
         新增
     </button>
-    <button sec:authorize="hasPermission('/system/dept/remove','sys:dept:remove')" class="pear-btn pear-btn-md" lay-event="batchRemove">
-        <i class="layui-icon layui-icon-delete"></i>
-        删除
-    </button>
+<!--    <button sec:authorize="hasPermission('/system/dept/remove','sys:dept:remove')" class="pear-btn pear-btn-md" lay-event="batchRemove">-->
+<!--    <button sec:authorize="hasPermission('/system/dept/remove','sys:dept:remove')" class="pear-btn pear-btn-md" lay-event="remove">-->
+<!--        <i class="layui-icon layui-icon-delete"></i>-->
+<!--        删除-->
+<!--    </button>-->
 </script>
 
 <script type="text/html" id="dept-bar">
-    <button sec:authorize="hasPermission('/system/dept/edit','sys:dept:edit')" class="pear-btn pear-btn-primary pear-btn-sm" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>
+    <button sec:authorize="hasPermission('/system/dept/edit','sys:dept:edit')" class="pear-btn pear-btn-primary pear-btn-sm" lay-event="edit">
+        <i class="layui-icon layui-icon-edit"></i>
     </button>
-    <button sec:authorize="hasPermission('/system/dept/remove','sys:dept:remove')" class="pear-btn pear-btn-danger pear-btn-sm" lay-event="remove"><i class="layui-icon layui-icon-delete"></i>
+    <button sec:authorize="hasPermission('/system/dept/remove','sys:dept:remove')" class="pear-btn pear-btn-danger pear-btn-sm" lay-event="remove">
+        <i class="layui-icon layui-icon-delete"></i>
     </button>
 </script>
 
@@ -82,7 +85,7 @@
                 page: false,
                 cols: [
                     [
-                        {type: 'checkbox'},
+                        // {type: 'checkbox'},
                         {field: 'deptName', minWidth: 200, title: '药品分类'},
                         {field: 'leader', title: '负责人'},
                         {field: 'phone', title: '联系方式'},

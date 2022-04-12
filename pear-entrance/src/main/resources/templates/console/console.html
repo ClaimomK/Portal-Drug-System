@@ -330,8 +330,6 @@
             requeryNum = data.count
         },
     });
-
-
     $.ajax({
         url: '/mydata/getData',   //月访问数量
         type: 'get',
@@ -341,12 +339,6 @@
                 monthsList.push(item.months);
                 countList.push(item.count)
             })
-
-
-            // obj[dateData.months] = data.months;
-            // obj[e.name] = e.value;
-            // console.log(dateData)
-
         },
     });
 

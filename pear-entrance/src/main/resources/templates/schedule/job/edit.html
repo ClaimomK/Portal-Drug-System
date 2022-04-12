@@ -16,21 +16,21 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">任务名称</label>
+                    <label class="layui-form-label">药品名称</label>
                     <div class="layui-input-block">
                         <input type="text" th:value="${scheduleJob.jobName}" name="jobName" lay-verify="title"
                                autocomplete="off" placeholder="运行类" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">运行类</label>
+                    <label class="layui-form-label">审核人</label>
                     <div class="layui-input-block">
                         <input type="text" th:value="${scheduleJob.beanName}" name="beanName" lay-verify="title"
                                autocomplete="off" placeholder="运行类" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">参数</label>
+                    <label class="layui-form-label">过期时间</label>
                     <div class="layui-input-block">
                         <input type="text" th:value="${scheduleJob.params}" name="params" lay-verify="title"
                                autocomplete="off" placeholder="执行表达式" class="layui-input">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="layui-form-item layui-form-text">
-                    <label class="layui-form-label">描述</label>
+                    <label class="layui-form-label">审核时间</label>
                     <div class="layui-input-block">
                         <textarea placeholder="任务描述" th:text="${scheduleJob.remark}" name="remark"
                                   class="layui-textarea"></textarea>
