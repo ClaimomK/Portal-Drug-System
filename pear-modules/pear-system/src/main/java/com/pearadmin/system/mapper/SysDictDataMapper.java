@@ -91,4 +91,12 @@ public interface SysDictDataMapper {
      */
     public List<SysDictData> queryTableDictByKeys(@Param("table") String table, @Param("text") String text, @Param("code") String code, @Param("keyArray") String[] keyArray);
 
+
+
+    /**
+     * Describe: 根据 Id 删除系统配置
+     * Param: id
+     * Return: SysdictData
+     * */
+    Integer deleteByIds(String[] id);
 }

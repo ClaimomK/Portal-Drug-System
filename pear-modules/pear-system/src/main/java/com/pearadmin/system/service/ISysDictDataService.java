@@ -66,4 +66,7 @@ public interface ISysDictDataService {
      * Return: Boolean
      * */
     Boolean updateById(SysDictData sysDictData);
+
+
+    Boolean batchRemove(String[] ids);
 }

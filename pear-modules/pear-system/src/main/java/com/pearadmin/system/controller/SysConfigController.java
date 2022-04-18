@@ -137,7 +137,7 @@ public class SysConfigController extends BaseController {
     @DeleteMapping("batchRemove/{ids}")
     @ApiOperation(value="批量删除系统配置数据")
     @PreAuthorize("hasPermission('/system/config/remove','sys:config:remove')")
-    public Result batchRemove(@PathVariable String ids){
+    public Result batchRemove(@PathVariable("ids") String ids){
         boolean result = sysConfigService.batchRemove(ids.split(","));
         return decide(result);
     }

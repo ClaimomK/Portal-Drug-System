@@ -96,6 +96,12 @@ public class SysDictDataServiceImpl implements ISysDictDataService {
     }
 
     @Override
+    public Boolean batchRemove(String[] ids) {
+            Integer result = sysDictDataMapper.deleteByIds(ids);
+            return result > 0;
+    }
+
+    @Override
     public Boolean remove(String id) {
         SysDictData sysDictData=  sysDictDataMapper.selectById(id);
         if(sysDictData!=null) {

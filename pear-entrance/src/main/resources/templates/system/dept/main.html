@@ -36,8 +36,8 @@
         <i class="layui-icon layui-icon-add-1"></i>
         新增
     </button>
-<!--    <button sec:authorize="hasPermission('/system/dept/remove','sys:dept:remove')" class="pear-btn pear-btn-md" lay-event="batchRemove">-->
-<!--    <button sec:authorize="hasPermission('/system/dept/remove','sys:dept:remove')" class="pear-btn pear-btn-md" lay-event="remove">-->
+<!--    <button class="pear-btn pear-btn-md" lay-event="batchRemove">-->
+<!-- <button sec:authorize="hasPermission('/system/dept/remove','sys:dept:remove')" class="pear-btn pear-btn-md" lay-event="remove">&ndash;&gt;-->
 <!--        <i class="layui-icon layui-icon-delete"></i>-->
 <!--        删除-->
 <!--    </button>-->
@@ -72,7 +72,8 @@
 
         window.render = function () {
             treetable.render({
-                treeColIndex: 1,
+                // treeColIndex: 1,
+                treeColIndex: 0,
                 treeSpid: 0,
                 treeIdName: 'deptId',
                 treePidName: 'parentId',
@@ -144,6 +145,7 @@
                 window.refresh();
             } else if (obj.event === 'batchRemove') {
                 window.batchRemove(obj);
+
             }
         });
 

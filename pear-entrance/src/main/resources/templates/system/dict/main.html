@@ -50,10 +50,10 @@
         <i class="layui-icon layui-icon-add-1"></i>
         新增
     </button>
-    <button class="pear-btn pear-btn-md" lay-event="batchRemove">
-        <i class="layui-icon layui-icon-delete"></i>
-        删除
-    </button>
+<!--    <button class="pear-btn pear-btn-md" lay-event="batchRemove">-->
+<!--        <i class="layui-icon layui-icon-delete"></i>-->
+<!--        删除-->
+<!--    </button>-->
 </script>
 
 <script type="text/html" id="dict-type-bar">
@@ -72,15 +72,19 @@
     <input type="checkbox" value="{{d.id}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="dict-type-enable" {{d.enable== '0' ? 'checked' : '' }}>
 </script>
 
+
+
+
+
 <script type="text/html" id="dict-data-toolbar">
     <button class="pear-btn pear-btn-primary pear-btn-md" lay-event="add">
         <i class="layui-icon layui-icon-add-1"></i>
         新增
     </button>
-    <button class="pear-btn pear-btn-md" lay-event="batchRemove">
-        <i class="layui-icon layui-icon-delete"></i>
-        删除
-    </button>
+<!--    <button class="pear-btn pear-btn-md" lay-event="batchRemove">-->
+<!--        <i class="layui-icon layui-icon-delete"></i>-->
+<!--        删除-->
+<!--    </button>-->
 </script>
 
 <script type="text/html" id="dict-data-bar">
@@ -96,17 +100,18 @@
 
 <th:block th:include="include :: footer"/>
 <script th:inline="javascript">
-    layui.use(['table', 'form', 'jquery','popup'], function () {
+    layui.use(['table', 'form', 'jquery','popup','common'], function () {
         let table = layui.table;
         let form = layui.form;
         let $ = layui.jquery;
         let popup = layui.popup;
+        let common = layui.common;
 
         let typeCode;
 
         let cols = [
             [
-                {type: 'checkbox'},
+                // {type: 'checkbox'},
                 {title: '姓名-电话', field: 'typeName', align: 'center', width: 120},
                 {title: '描述', field: 'description', align: 'center'},
                 {title: '状态', field: 'enable', align: 'center', templet: '#dict-type-enable'},
@@ -116,7 +121,7 @@
 
         let dataCols = [
             [
-                {type: 'checkbox'},
+                // {type: 'checkbox'},
                 {title: '创建时间', field: 'dataLabel', align: 'center', width: 120},
                 {title: '解决时间', field: 'dataValue', align: 'center'},
                 {title: '状态', field: 'enable', align: 'center', templet: '#dict-data-enable'},
@@ -163,11 +168,15 @@
         });
 
         table.on('toolbar(dict-type-table)', function (obj) {
+            console.log(obj)
             if (obj.event === 'add') {
                 window.addType();
             } else if (obj.event === 'refresh') {
                 window.refreshType();
             }
+            // else if (obj.event === 'batchRemove') {
+            //     window.batchRemove(obj)}
+            // console.log(obj)
         });
 
         form.on('submit(dict-type-query)', function (data) {
@@ -291,6 +300,40 @@
                 })
             });
         }
+
+
+        window.batchRemove = function (obj) {
+            // console.log(obj)
+            let ids = common.checkField(obj, 'dataId');
+            console.log(ids)
+            if (common.isEmpty(ids)) {
+                popup.warning("未选中数据");
+                return false;
+            }
+            layer.confirm('确定要删除选中', {icon: 3, title: '提示'}, function (index) {
+                layer.close(index);
+                let loading = layer.load();
+                $.ajax({
+                    url: "/system/dictData/" + "batchRemove/" + ids,
+                    dataType: 'json',
+                    type: 'delete',
+                    success: function (result) {
+                        layer.close(loading);
+                        if (result.success) {
+                            popup.success(result.msg, function () {
+                                table.reload('dict-type-table');
+                            });
+                        } else {
+                            popup.failure(result.msg);
+                        }
+                    }
+                });
+            });
+        }
+
+
+
+
 
         table.on('tool(dict-data-table)', function (obj) {
             if (obj.event === 'remove') {

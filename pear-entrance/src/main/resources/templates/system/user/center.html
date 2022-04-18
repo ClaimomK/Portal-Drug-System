@@ -5,8 +5,8 @@
     <link rel="stylesheet" href="../../admin/css/other/center.css"/>
     <style>
         .layui-form-item{
-            margin-top: 17px!important;
-            margin-bottom: 17px!important;
+            margin-top: 40px!important;
+            margin-bottom: 19px!important;
         }
     </style>
 </head>
@@ -23,9 +23,9 @@
                     <p style="padding-top: 8px;margin-top: 50px;font-size: 13.5px;">China ， 中国</p>
                 </div>
             </div>
-            <div style="height: 100px;border-top: 1px whitesmoke solid;text-align: center;line-height: 100px;font-size: 13.5px;margin-top: 46px;">
-                <span th:text="${userInfo.remark}">今日事 ，今日毕</span>
-            </div>
+                <div style="height: 100px;border-top: 1px whitesmoke solid;text-align: center;line-height: 100px;font-size: 13.5px;margin-top: 46px;">
+                    <span th:text="${userInfo.remark}">今日事 ，今日毕</span>
+                </div>
         </div>
         <div class="layui-card">
 <!--            <div class="layui-card-header">-->
@@ -81,12 +81,12 @@
                                            autocomplete="off" placeholder="请输入标题" class="layui-input">
                                     </div>
                                 </div>
-                                <div class="layui-form-item layui-form-text">
-                                    <label class="layui-form-label">描述</label>
-                                    <div class="layui-input-block">
-                                        <textarea th:text="${userInfo.remark}" placeholder="请输入描述" name="details" class="layui-textarea"></textarea>
-                                    </div>
-                                </div>
+<!--                                <div class="layui-form-item layui-form-text">-->
+<!--                                    <label class="layui-form-label">描述</label>-->
+<!--                                    <div class="layui-input-block">-->
+<!--                                        <textarea th:text="${userInfo.remark}" placeholder="请输入描述" name="details" class="layui-textarea"></textarea>-->
+<!--                                    </div>-->
+<!--                                </div>-->
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
                                         <button class="pear-btn pear-btn-primary pear-btn-sm" lay-submit lay-filter="user-update">修改资料</button>

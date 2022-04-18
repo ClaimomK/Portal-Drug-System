@@ -199,6 +199,7 @@
 
         window.batchRemove = function (obj) {
             let ids = common.checkField(obj, 'configId');
+            console.log(ids)
             if (common.isEmpty(ids)) {
                 popup.warning("未选中数据");
                 return false;

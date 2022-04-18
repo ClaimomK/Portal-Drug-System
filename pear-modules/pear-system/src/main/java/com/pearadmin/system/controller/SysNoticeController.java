@@ -94,7 +94,7 @@ public class SysNoticeController extends BaseController
 
         Map<String,Object> noticeArray = new HashMap<>();
         noticeArray.put("id","3");
-        noticeArray.put("title","通知");
+        noticeArray.put("title"," ");
         noticeArray.put("children",sysNoticeService.selectSysNoticeList(noticeParam));
 
         result.add(publicArray);
