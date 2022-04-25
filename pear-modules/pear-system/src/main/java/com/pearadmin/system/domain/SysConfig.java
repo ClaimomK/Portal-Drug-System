@@ -44,5 +44,13 @@ public class SysConfig extends BaseDomain {
      * 创建时间
      */
     private LocalDateTime createTime;
+    /**
+     * 金额
+     */
+    private Float money;
+/**
+     * 数量
+     */
+    private Integer number;
 
 }

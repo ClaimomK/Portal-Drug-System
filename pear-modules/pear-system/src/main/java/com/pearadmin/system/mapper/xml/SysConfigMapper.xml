@@ -13,6 +13,8 @@
         <result column="update_by" property="updateBy"></result>
         <result column="update_time" property="updateTime"></result>
         <result column="remark" property="remark"></result>
+        <result column="money" property="money"></result>
+        <result column="number" property="number"></result>
     </resultMap>
 
     <select id="selectList" resultMap="SysConfigMap">
@@ -60,6 +62,12 @@
             <if test="remark!=null and remark!=''">
                 remark,
             </if>
+            <if test="money!=null and money!=''">
+                money,
+            </if>
+            <if test="number!=null and number!=''">
+                number,
+            </if>
         </trim>
         <trim prefix="values(" suffix=")" suffixOverrides=",">
             <if test="configId!=null">
@@ -79,6 +87,12 @@
             </if>
             <if test="remark!=null and remark!=''">
                 #{remark},
+            </if>
+            <if test="money!=null and money!=''">
+                #{money},
+            </if>
+            <if test="number!=null and number!=''">
+                #{number},
             </if>
         </trim>
     </insert>
@@ -101,6 +115,12 @@
             </if>
             <if test="remark!=null and remark!=''">
                 remark = #{remark},
+            </if>
+            <if test="money!=null and money!=''">
+                money = #{money},
+            </if>
+            <if test="number!=null and number!=''">
+                number = #{number},
             </if>
         </set>
         where config_id = #{configId}

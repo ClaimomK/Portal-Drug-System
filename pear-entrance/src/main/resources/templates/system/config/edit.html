@@ -36,8 +36,23 @@
                                autocomplete="off" placeholder="请输入标题" class="layui-input">
                     </div>
                 </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">数量</label>
+                    <div class="layui-input-block">
+                        <input type="text" th:value="${sysConfig.money}" name="money" lay-verify="title"
+                               autocomplete="off" placeholder="请输入金额" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" th:value="${sysConfig.money}" name="money" lay-verify="title"
+                               autocomplete="off" placeholder="请输入金额" class="layui-input">
+                    </div>
+                </div>
+
                 <div class="layui-form-item layui-form-text">
-                    <label class="layui-form-label">盒-金额-时间</label>
+                    <label class="layui-form-label">时间</label>
                     <div class="layui-input-block">
                         <textarea placeholder="请输入描述" name="remark"  th:text="${sysConfig.remark}" class="layui-textarea"></textarea>
                     </div>

@@ -63,5 +63,9 @@ public class ScheduleJob implements Serializable {
 	 * 备 注
 	 * */
 	private String remark;
+/**
+	 * 金 额
+	 * */
+	private String money;
 
 }

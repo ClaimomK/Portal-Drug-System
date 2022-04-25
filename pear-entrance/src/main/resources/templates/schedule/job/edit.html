@@ -37,6 +37,13 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
+                    <label class="layui-form-label">金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" th:value="${scheduleJob.money}" name="params" lay-verify="title"
+                               autocomplete="off" placeholder="执行表达式" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
                     <label class="layui-form-label">表达式</label>
                     <div class="layui-input-block">
                         <input type="text" th:value="${scheduleJob.cronExpression}" name="cronExpression"
