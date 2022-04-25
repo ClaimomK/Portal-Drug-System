@@ -1,3 +1,4 @@
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5995/badge)](https://bestpractices.coreinfrastructure.org/projects/5995)
 
 <div align="center">
 <br/>
